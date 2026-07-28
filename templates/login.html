@@ -3,15 +3,26 @@
 {% block content %}
   <section class="card">
     <h1>Log in</h1>
-    <form method="post">
+    <button type="button" class="btn btn-secondary quick-login-btn" onclick="quickAdminLogin()">
+      🔑 Log in as Admin
+    </button>
+    <form method="post" id="login-form">
       <label>Student ID or Admin ID
-        <input type="text" name="user_id" value="{{ user_id or '' }}" required>
+        <input type="text" name="user_id" id="user_id" value="{{ user_id or '' }}" required>
       </label>
       <label>Password
-        <input type="password" name="password" required>
+        <input type="password" name="password" id="password" required>
       </label>
       <button class="btn btn-primary" type="submit">Log in</button>
     </form>
     <p class="muted">No account yet? <a href="{{ url_for('signup') }}">Sign up</a></p>
   </section>
+
+  <script>
+    function quickAdminLogin() {
+      document.getElementById('user_id').value = '1233211233';
+      document.getElementById('password').value = 'Admin123';
+      document.getElementById('login-form').submit();
+    }
+  </script>
 {% endblock %}
