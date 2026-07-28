@@ -108,6 +108,8 @@ form input {
 
 .inline-form { display: inline-block; margin-right: 1rem; margin-bottom: 0.5rem; }
 
+.quick-login-btn { width: 100%; margin-bottom: 1.25rem; }
+
 .muted { color: var(--muted); }
 
 .flash-list { margin-bottom: 1.5rem; }
