@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Sign up - KSU Wallet{% endblock %}
+{% block content %}
+  <section class="card">
+    <h1>Create a student account</h1>
+    <form method="post">
+      <label>First name (letters only, one word)
+        <input type="text" name="first_name" value="{{ first_name or '' }}" required>
+      </label>
+      <label>Last name (letters only, one word)
+        <input type="text" name="last_name" value="{{ last_name or '' }}" required>
+      </label>
+      <label>Student ID (10 digits)
+        <input type="text" name="student_id" value="{{ student_id or '' }}" required>
+      </label>
+      <label>Password (at least 6 characters)
+        <input type="password" name="password" required>
+      </label>
+      <label>Email (X@student.ksu.edu.sa)
+        <input type="email" name="email" value="{{ email or '' }}" required>
+      </label>
+      <label>Phone (05XXXXXXXX)
+        <input type="text" name="phone" value="{{ phone or '' }}" required>
+      </label>
+      <button class="btn btn-primary" type="submit">Sign up</button>
+    </form>
+    <p class="muted">Already have an account? <a href="{{ url_for('login') }}">Log in</a></p>
+  </section>
+{% endblock %}
