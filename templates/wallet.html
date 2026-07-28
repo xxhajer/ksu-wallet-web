@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}My Wallet - KSU Wallet{% endblock %}
+{% block content %}
+  <section class="card">
+    <h1>My Wallet</h1>
+    <p><strong>Wallet number:</strong> {{ wallet_number }}</p>
+    <p><strong>Balance:</strong> {{ balance }} SR</p>
+  </section>
+
+  <section class="card">
+    <h2>Transfer money</h2>
+    <form method="post" action="{{ url_for('wallet_pay') }}">
+      <label>Target wallet number (10 digits)
+        <input type="text" name="target" required>
+      </label>
+      <label>Amount (SR)
+        <input type="number" name="amount" min="1" required>
+      </label>
+      <button class="btn btn-primary" type="submit">Pay</button>
+    </form>
+  </section>
+{% endblock %}
