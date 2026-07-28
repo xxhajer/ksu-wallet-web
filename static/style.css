@@ -1,0 +1,130 @@
+:root {
+  --primary: #6b4620;
+  --primary-dark: #4d3216;
+  --bg: #f4f1ec;
+  --card-bg: #ffffff;
+  --border: #ddd4c5;
+  --text: #2a2420;
+  --muted: #7a7268;
+  --error: #b3261e;
+  --success: #1e6b3a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--primary);
+  color: white;
+}
+
+.topbar .brand {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.topbar nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+  opacity: 0.9;
+}
+
+.topbar nav a:hover { opacity: 1; text-decoration: underline; }
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 520px;
+  margin: 1rem auto;
+}
+
+.actions { display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; }
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card h1, .card h2 { margin-top: 0; }
+
+form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-dark); }
+
+.btn-secondary { background: transparent; color: var(--primary); border: 1px solid var(--primary); }
+.btn-secondary:hover { background: #f0e9e0; }
+
+.inline-form { display: inline-block; margin-right: 1rem; margin-bottom: 0.5rem; }
+
+.muted { color: var(--muted); }
+
+.flash-list { margin-bottom: 1.5rem; }
+
+.flash {
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.flash-error { background: #fbe9e7; color: var(--error); border: 1px solid #f3c6c1; }
+.flash-success { background: #e7f3ea; color: var(--success); border: 1px solid #bfe0c9; }
+
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
