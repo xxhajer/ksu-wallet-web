@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}KSU Wallet{% endblock %}
+{% block content %}
+  <section class="hero">
+    <h1>KSU Wallet</h1>
+    <p>A simple campus wallet: students sign up, receive a starting balance,
+       and transfer money to each other. Admins manage KSU entities, pay
+       stipends, and cash out entity balances.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="{{ url_for('signup') }}">Create a student account</a>
+      <a class="btn btn-secondary" href="{{ url_for('login') }}">Log in</a>
+    </div>
+  </section>
+{% endblock %}
