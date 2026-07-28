@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Admin - KSU Wallet{% endblock %}
+{% block content %}
+  <section class="card">
+    <h1>Admin panel</h1>
+  </section>
+
+  <section class="card">
+    <h2>KSU entities</h2>
+    {% if entities %}
+      <table class="table">
+        <thead>
+          <tr><th>ID</th><th>Name</th><th>Balance (SR)</th></tr>
+        </thead>
+        <tbody>
+          {% for e in entities %}
+            <tr>
+              <td>{{ e.entity_id }}</td>
+              <td>{{ e.name }}</td>
+              <td>{{ e.balance }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="muted">No entities yet.</p>
+    {% endif %}
+  </section>
+
+  <section class="card">
+    <h2>Add entity</h2>
+    <form method="post" action="{{ url_for('admin_add_entity') }}">
+      <label>Entity name
+        <input type="text" name="name" required>
+      </label>
+      <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Manage</h2>
+    <form method="post" action="{{ url_for('admin_pay_stipends') }}" class="inline-form">
+      <button class="btn btn-primary" type="submit">Pay stipends (1000 SR to every student)</button>
+    </form>
+    <form method="post" action="{{ url_for('admin_cash_out') }}" class="inline-form"
+          onsubmit="return confirm('Set all KSU entity balances to 0?');">
+      <button class="btn btn-secondary" type="submit">Cash out all KSU entities</button>
+    </form>
+  </section>
+{% endblock %}
